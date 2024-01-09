@@ -41,10 +41,10 @@ const util = {
         console.log("Array inicial:", meuArray);
 
         const tempoInicio = new Date().getTime();
-        fAlgoritmo.call(this, meuArray, 0, meuArray.length - 1);
+        const resultArray = fAlgoritmo.call(this, meuArray, 0, meuArray.length - 1);
         const tempoFim = new Date().getTime();
 
-        console.log("Array ordenado:", meuArray);
+        console.log("Array ordenado:", resultArray || meuArray);
         console.log('Tempo:', tempoFim - tempoInicio, 'ms');
     }
 };
