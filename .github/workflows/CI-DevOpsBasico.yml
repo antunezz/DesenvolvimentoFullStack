@@ -18,7 +18,7 @@ jobs:
         with:
           node-version: 16.13.2
 
-      - name: INstalação do mocha para testes
+      - name: Instalação do mocha para testes
         run: |
           cd D03-DevOpsBasico/conversao-temperatura-2-main/src;
           npm install -g mocha;
