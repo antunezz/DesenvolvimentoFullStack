@@ -17,3 +17,12 @@ jobs:
         uses: actions/setup-node@v4.0.1
         with:
           node-version: 16.13.2
+
+      - name: INstalação do mocha para testes
+        run: |
+          cd D03-DevOpsBasico/conversao-temperatura-2-main/src;
+          npm install -g mocha;
+          npm install;
+
+      - name: Execução do teste
+        run: mocha D03-DevOpsBasico/conversao-temperatura-2-main/src/test/convert.js
