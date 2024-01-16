@@ -18,9 +18,7 @@
   node mergesort <tamanho> <min> <max>
   ```
 
-* Quick sort 3
+* Quick sort
   ```sh
-  node quicksort3 <tamanho> <min> <max>
+  node quicksort <tamanho> <min> <max>
   ```
-
-
