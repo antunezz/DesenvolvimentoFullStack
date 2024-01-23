@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="ServicoTodo"
+  targetNamespace="http://localhost:3000/wstodo"
+  xmlns="http://schemas.xmlsoap.org/wsdl/"
+  xmlns:tns="http://localhost:3000/wstodo"
+  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <!-- Types -->
+  <types>
+    <schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://localhost:3000/wstodo">
+      <element name="obterTodasTarefasRequest" type="void"/>
+      <element name="obterTodasTarefasResponse">
+        <complexType>
+          <sequence>
+            <element name="tarefas" type="xsd:string"/>
+          </sequence>
+        </complexType>
+      </element>
+
+      <element name="obterTarefaPorIdRequest">
+        <complexType>
+          <sequence>
+            <element name="id" type="xsd:string"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="obterTarefaPorIdResponse">
+        <complexType>
+          <sequence>
+            <element name="tarefa" type="xsd:string"/>
+          </sequence>
+        </complexType>
+      </element>
+
+      <element name="criarTarefaRequest">
+        <complexType>
+          <sequence>
+            <element name="tarefa" type="xsd:string"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="criarTarefaResponse">
+        <complexType>
+          <sequence>
+            <element name="tarefa" type="xsd:string"/>
+          </sequence>
+        </complexType>
+      </element>
+
+      <element name="atualizarTarefaRequest">
+        <complexType>
+          <sequence>
+            <element name="id" type="xsd:string"/>
+            <element name="tarefa" type="xsd:string"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="atualizarTarefaResponse">
+        <complexType>
+          <sequence>
+            <element name="tarefa" type="xsd:string"/>
+          </sequence>
+        </complexType>
+      </element>
+
+      <element name="excluirTarefaRequest">
+        <complexType>
+          <sequence>
+            <element name="id" type="xsd:string"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="excluirTarefaResponse">
+        <complexType>
+          <sequence>
+            <element name="mensagem" type="xsd:string"/>
+            <element name="tarefa" type="xsd:string"/>
+          </sequence>
+        </complexType>
+      </element>
+    </schema>
+  </types>
+
+  <!-- Messages -->
+  <message name="obterTodasTarefasInput">
+    <part name="parameters" element="tns:obterTodasTarefasRequest"/>
+  </message>
+  <message name="obterTodasTarefasOutput">
+    <part name="parameters" element="tns:obterTodasTarefasResponse"/>
+  </message>
+
+  <message name="obterTarefaPorIdInput">
+    <part name="parameters" element="tns:obterTarefaPorIdRequest"/>
+  </message>
+  <message name="obterTarefaPorIdOutput">
+    <part name="parameters" element="tns:obterTarefaPorIdResponse"/>
+  </message>
+
+  <message name="criarTarefaInput">
+    <part name="parameters" element="tns:criarTarefaRequest"/>
+  </message>
+  <message name="criarTarefaOutput">
+    <part name="parameters" element="tns:criarTarefaResponse"/>
+  </message>
+
+  <message name="atualizarTarefaInput">
+    <part name="parameters" element="tns:atualizarTarefaRequest"/>
+  </message>
+  <message name="atualizarTarefaOutput">
+    <part name="parameters" element="tns:atualizarTarefaResponse"/>
+  </message>
+
+  <message name="excluirTarefaInput">
+    <part name="parameters" element="tns:excluirTarefaRequest"/>
+  </message>
+  <message name="excluirTarefaOutput">
+    <part name="parameters" element="tns:excluirTarefaResponse"/>
+  </message>
+
+  <!-- Port Type -->
+  <portType name="PortaTodo">
+    <operation name="obterTodasTarefas">
+      <input message="tns:obterTodasTarefasInput"/>
+      <output message="tns:obterTodasTarefasOutput"/>
+    </operation>
+    <operation name="obterTarefaPorId">
+      <input message="tns:obterTarefaPorIdInput"/>
+      <output message="tns:obterTarefaPorIdOutput"/>
+    </operation>
+    <operation name="criarTarefa">
+      <input message="tns:criarTarefaInput"/>
+      <output message="tns:criarTarefaOutput"/>
+    </operation>
+    <operation name="atualizarTarefa">
+      <input message="tns:atualizarTarefaInput"/>
+      <output message="tns:atualizarTarefaOutput"/>
+    </operation>
+    <operation name="excluirTarefa">
+      <input message="tns:excluirTarefaInput"/>
+      <output message="tns:excluirTarefaOutput"/>
+    </operation>
+  </portType>
+
+  <!-- Binding -->
+  <binding name="PortaTodoSoapBinding" type="tns:PortaTodo">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="obterTodasTarefas">
+      <soap:operation soapAction="urn:obterTodasTarefas"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="obterTarefaPorId">
+      <soap:operation soapAction="urn:obterTarefaPorId"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="criarTarefa">
+      <soap:operation soapAction="urn:criarTarefa"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="atualizarTarefa">
+      <soap:operation soapAction="urn:atualizarTarefa"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="excluirTarefa">
+      <soap:operation soapAction="urn:excluirTarefa"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+
+  <!-- Service -->
+  <service name="ServicoTodo">
+    <port name="PortaTodo" binding="tns:PortaTodoSoapBinding">
+      <soap:address location="http://localhost:3000/wstodo"/>
+    </port>
+  </service>
+
+</definitions>
