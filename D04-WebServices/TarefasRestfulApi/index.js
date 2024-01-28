@@ -5,19 +5,15 @@ const bodyParser = require('body-parser');
 const app = express();
 const PORTA = 3000;
 
-// Conectar ao MongoDB (certifique-se de que seu servidor MongoDB local está em execução)
-mongoose.connect('mongodb://localhost/todo-api', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+// Conectar ao Mongo
+mongoose.connect('mongodb://localhost/todo-api');
 
-// Definir o modelo de tarefa
+// Modelo de tarefa
 const Tarefa = mongoose.model('Tarefa', {
   titulo: String,
   concluida: { type: Boolean, default: false },
 });
 
-// Middleware para analisar JSON no corpo da solicitação
 app.use(bodyParser.json());
 
 // Rotas

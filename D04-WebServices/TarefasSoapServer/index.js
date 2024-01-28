@@ -7,7 +7,7 @@ const app = express();
 const PORTA = 3000;
 const MONGODB_URI = 'mongodb://localhost/todo-soap';
 
-// Definir o modelo de tarefa usando Mongoose
+// Modelo de tarefa
 const Tarefa = mongoose.model('Tarefa', {
   titulo: String,
   concluida: { type: Boolean, default: false },
@@ -96,13 +96,11 @@ const servico = {
 
 var xml = require('fs').readFileSync('todo.wsdl', 'utf8');
 
-// Middleware para analisar XML no corpo da solicitação
 app.use(bodyParser.raw({ type: function () { return true; }, limit: '5mb' }));
 
-// Iniciar o servidor
 app.listen(PORTA, () => {
   console.log(`O servidor está rodando em http://localhost:${PORTA}`);
   soap.listen(app, '/wstodo', servico, xml, () => {
-    console.log('Serviço todo inicializado');
+    console.log('Serviço de tarefas inicializado');
   });
 });
