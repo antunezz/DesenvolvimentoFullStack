@@ -1,0 +1,395 @@
+{
+	"info": {
+		"_postman_id": "8d19d7bb-085d-4df1-b796-6472a63e5ac4",
+		"name": "Microserviços de pedidos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32694265"
+	},
+	"item": [
+		{
+			"name": "Listar produtos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://Eduardos-MacBook-Air.local:10800/api/produtos",
+					"protocol": "http",
+					"host": [
+						"Eduardos-MacBook-Air",
+						"local"
+					],
+					"port": "10800",
+					"path": [
+						"api",
+						"produtos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Detalhe de um produto",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://Eduardos-MacBook-Air.local:10800/api/produtos/1",
+					"protocol": "http",
+					"host": [
+						"Eduardos-MacBook-Air",
+						"local"
+					],
+					"port": "10800",
+					"path": [
+						"api",
+						"produtos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar o preço",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://Eduardos-MacBook-Air.local:10800/api/precos/1",
+					"protocol": "http",
+					"host": [
+						"Eduardos-MacBook-Air",
+						"local"
+					],
+					"port": "10800",
+					"path": [
+						"api",
+						"precos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Alterar o preço",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "precoNormal",
+							"value": "15.1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://Eduardos-MacBook-Air.local:10800/api/precos/1",
+					"protocol": "http",
+					"host": [
+						"Eduardos-MacBook-Air",
+						"local"
+					],
+					"port": "10800",
+					"path": [
+						"api",
+						"precos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar o estoque",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://Eduardos-MacBook-Air.local:10800/api/estoque/1",
+					"protocol": "http",
+					"host": [
+						"Eduardos-MacBook-Air",
+						"local"
+					],
+					"port": "10800",
+					"path": [
+						"api",
+						"estoque",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Adicionar 10 laranjas",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://Eduardos-MacBook-Air.local:10800/api/carrinho/1?quantidade=10",
+					"protocol": "http",
+					"host": [
+						"Eduardos-MacBook-Air",
+						"local"
+					],
+					"port": "10800",
+					"path": [
+						"api",
+						"carrinho",
+						"1"
+					],
+					"query": [
+						{
+							"key": "quantidade",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar os itens do carrinho",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://Eduardos-MacBook-Air.local:10800/api/carrinho",
+					"protocol": "http",
+					"host": [
+						"Eduardos-MacBook-Air",
+						"local"
+					],
+					"port": "10800",
+					"path": [
+						"api",
+						"carrinho"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Adicionar 5 Brócolis",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://Eduardos-MacBook-Air.local:10800/api/carrinho/3?quantidade=5",
+					"protocol": "http",
+					"host": [
+						"Eduardos-MacBook-Air",
+						"local"
+					],
+					"port": "10800",
+					"path": [
+						"api",
+						"carrinho",
+						"3"
+					],
+					"query": [
+						{
+							"key": "quantidade",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Adicionando 2L de leite",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://Eduardos-MacBook-Air.local:10800/api/carrinho/4?quantidade=2",
+					"protocol": "http",
+					"host": [
+						"Eduardos-MacBook-Air",
+						"local"
+					],
+					"port": "10800",
+					"path": [
+						"api",
+						"carrinho",
+						"4"
+					],
+					"query": [
+						{
+							"key": "quantidade",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Removendo as laranjas",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://Eduardos-MacBook-Air.local:10800/api/carrinho/1?quantidade=0",
+					"protocol": "http",
+					"host": [
+						"Eduardos-MacBook-Air",
+						"local"
+					],
+					"port": "10800",
+					"path": [
+						"api",
+						"carrinho",
+						"1"
+					],
+					"query": [
+						{
+							"key": "quantidade",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Adicionando mais um brócolis",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://Eduardos-MacBook-Air.local:10800/api/carrinho/3?quantidade=6",
+					"protocol": "http",
+					"host": [
+						"Eduardos-MacBook-Air",
+						"local"
+					],
+					"port": "10800",
+					"path": [
+						"api",
+						"carrinho",
+						"3"
+					],
+					"query": [
+						{
+							"key": "quantidade",
+							"value": "6"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar os itens do carrinho",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = pm.response.json();",
+							"var carrinho = {usuario: \"usuarioLogado\", itens: []};",
+							"jsonData.itens.forEach((item) => {",
+							"    carrinho.itens.push({",
+							"        produto: item.produto.id,",
+							"        quantidade: item.quantidade",
+							"    });",
+							"});",
+							"pm.globals.set(\"carrinho\", JSON.stringify(carrinho));"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://Eduardos-MacBook-Air.local:10800/api/carrinho",
+					"protocol": "http",
+					"host": [
+						"Eduardos-MacBook-Air",
+						"local"
+					],
+					"port": "10800",
+					"path": [
+						"api",
+						"carrinho"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criar o pedido",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = pm.response.json();",
+							"pm.globals.set(\"idPedido\", jsonData['id']);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{{carrinho}}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://Eduardos-MacBook-Air.local:10800/api/pedidos/",
+					"protocol": "http",
+					"host": [
+						"Eduardos-MacBook-Air",
+						"local"
+					],
+					"port": "10800",
+					"path": [
+						"api",
+						"pedidos",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar o pedido",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://Eduardos-MacBook-Air.local:10800/api/pedidos/{{idPedido}}",
+					"protocol": "http",
+					"host": [
+						"Eduardos-MacBook-Air",
+						"local"
+					],
+					"port": "10800",
+					"path": [
+						"api",
+						"pedidos",
+						"{{idPedido}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
