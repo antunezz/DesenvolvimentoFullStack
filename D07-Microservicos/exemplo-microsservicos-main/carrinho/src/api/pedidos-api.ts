@@ -7,7 +7,6 @@ export class PedidosApi {
     console.log('Fechando pedido', pedido);
     const canal = await conectar();
     await canal.assertQueue(FILA);
-    console.log('passou do assert queue');
     canal.sendToQueue(FILA, Buffer.from(JSON.stringify(pedido)));
     console.log(`Mensagem enviada para a fila '${FILA}'\n`);
     return Promise.resolve({message: 'Enviado!'});
