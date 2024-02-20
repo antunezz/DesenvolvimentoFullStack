@@ -1,0 +1,25 @@
+body {
+  font-family: Roboto, sans-serif;
+  background: #fffaeb;
+  color: #333;
+  padding: 1rem;
+  margin: 0;
+  font-size: 1rem;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  margin-top: 1rem;
+  list-style: none;
+}
+
+a, a:visited {
+  color: #333;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
